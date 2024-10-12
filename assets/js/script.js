@@ -86,6 +86,9 @@ let calculateCorrectAnswer = () => {
     else if (operator === "x") {
         return [operand1 * operand2, "multiply"];
     }
+    else if (operator === "-") {
+        return [operand1 - operand2, "subtract"];
+    }
     else {
         alert(`Unimplemented operator ${operator}`);
         throw `Unimplemented operator ${operator}. Aborting!`;
@@ -118,8 +121,9 @@ let displayAdditionQuestion = (operand1, operand2) => {
 }
 
 let displaySubtractionQuestion = (operand1, operand2) => {
-    document.getElementById("operand1").innerText = operand1;
-    document.getElementById("operand2").innerText = operand2;
+    
+    document.getElementById("operand1").innerText = operand1 > operand2 ? operand1 : operand2;
+    document.getElementById("operand2").innerText = operand1 > operand2 ? operand2 : operand1;
     document.getElementById("operator").innerText = "-";
     
 }
