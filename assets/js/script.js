@@ -104,6 +104,9 @@ let calculateCorrectAnswer = () => {
     else if (operator === "-") {
         return [operand1 - operand2, "subtract"];
     }
+    else if (operator === "/") {
+        return [operand1 / operand2, "division"];
+    }
     else {
         alert(`Unimplemented operator ${operator}`);
         throw `Unimplemented operator ${operator}. Aborting!`;
@@ -150,7 +153,7 @@ let displayMultiplyQuestion = (operand1, operand2) => {
 }
 
 let displayDivideQuestion = (operand1, operand2) => {
-    document.getElementById("operand1").innerText = operand1;
+    document.getElementById("operand1").innerText = operand2 * operand1;
     document.getElementById("operand2").innerText = operand2;
     document.getElementById("operator").innerText = "/";
 }
