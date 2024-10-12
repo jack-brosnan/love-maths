@@ -83,6 +83,9 @@ let calculateCorrectAnswer = () => {
     if(operator === "+") {
         return [operand1 + operand2, "addition"];
     }
+    else if (operator === "x") {
+        return [operand1 * operand2, "multiply"];
+    }
     else {
         alert(`Unimplemented operator ${operator}`);
         throw `Unimplemented operator ${operator}. Aborting!`;
